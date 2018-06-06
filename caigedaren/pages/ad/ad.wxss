@@ -1,0 +1,49 @@
+/* pages/ad/ad.wxss */
+page{
+  width: 100%;
+  background-color: #4c46d8;
+}
+.complaint{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  /* padding-bottom: 35%; */
+}
+.complaint-title{
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 35rpx;
+  box-sizing: border-box;
+  background-color: #dddddd;
+  font-size: 28rpx;
+  color: #666666;
+}
+.complaint-detail{
+  width: 95%;
+  height: 90rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #dddddd;
+  margin-left: 5%;
+  font-size: 31rpx;
+}
+.complaint-bottom{
+  height: 120rpx;
+  background-color: #dddddd;
+  padding-top: 25rpx;
+}
+.complaint-bottom button{
+  width: 85%;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.yes{
+  width: 10%;
+  float: right;
+   color: #18cc00; 
+  /* color: #15b300; */
+  font-size: 40rpx;
+  display: none;
+}
+.show{
+  display: block;
+}

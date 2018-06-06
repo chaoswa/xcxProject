@@ -1,0 +1,75 @@
+<view class='container'>
+  <!-- 整排 -->
+  <view class='content'>
+    <text class='content_text'>我的歌单</text>
+    <view class='content_list'>
+      <!-- 單個 -->
+      <view class='content_list_info' bindtap='Togame' wx:for="{{songLoveList}}" wx:key='' data-type='{{item.song_type}}'>
+        <image class='content_list_info_img' src='https://xcx004.chaosuduokai.com/uploads/musicCategory/{{item.img}}'></image>
+        <view class='content_list_info_text'>
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 整排 -->
+  <view class='content bottom'>
+    <text class='content_text'>选择喜欢歌曲类型</text>
+    <view class='content_list'>
+      <!-- 單個 -->
+      <view class='content_list_info' bindtap='Togame' wx:for="{{songAllList}}" wx:key='index' data-type='{{item.song_type}}'>
+        <!-- 需要錢的 -->
+        <view class='money_box' wx:if="{{item.pay>0}}">￥
+          <text>{{item.pay}}.00</text>元</view>
+        <image class='content_list_info_img' src='https://xcx004.chaosuduokai.com/uploads/musicCategory/{{item.img}}'></image>
+        <view class='content_list_info_text'>
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='notes'>
+    <image src='../../images/classify/note1.png'></image>
+  </view>
+  <view class='index-bg'>
+    <image src='../../images/index/bg_bottom.png'></image>
+  </view>
+
+  <!-- 金币足够 -->
+  <view class='money_ok_box money_ok_bg' wx:if="{{hint}}">
+    <image class='img1' src='../../images/classify/Challenge_2.png'></image>
+    <view class='money_ok'>
+      <image class='img2' src='../../images/classify/Challenge_4.png'></image>
+      <text class='text_1'>猜歌君温馨提示：</text>
+      <text class='text_2'>本场游戏消耗 <text>{{Consume}} </text>积分!</text>
+      <view class='btn_box'>
+        <view class='btn_1' bindtap='Close'>取消</view>
+        <form report-submit='true' bindsubmit="orderSign">
+          <button class='btn_2' formType='submit'>确定</button>
+        </form>
+      </view>
+    </view>
+  </view>
+
+  <!-- 金币不足 -->
+  <view class='money_ok_box  money_no_box' wx:if="{{insufficient}}">
+    <view class='money_ok_bg'></view>
+    <image class='img1' src='../../images/classify/Challenge_3.png'></image>
+    <view class='money_ok'>
+      <view class='money_close' bindtap='money_close'>×</view>
+      <image class='img2' src='../../images/classify/Challenge_4.png'></image>
+      <text class='text_1'>猜歌君温馨提示：</text>
+      <text class='text_2'>  您的积分不足哦！您可以邀请朋友参与猜歌对战</text>
+      <view class='btn_box'>
+        <!-- <button class='btn_1' open-type='share'>分享好友，积分+10</button> -->
+        <button class='btn_2' open-type='share'>邀请好友一起来猜歌</button>
+      </view>
+    </view>
+  </view>
+
+
+
+
+</view>

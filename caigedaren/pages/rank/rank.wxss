@@ -1,0 +1,58 @@
+/* pages/rank/rank.wxss */
+page{
+  width: 100%;
+  background-color: #410070;
+}
+.container {
+  padding-bottom: 120rpx;
+  text-align: center;  
+} 
+
+.r_userPoint{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  width: 174rpx;
+  height: 50rpx;
+  color: #ffe400;
+  line-height: 50rpx;
+  border-radius: 30rpx;
+  background-color: #000;
+  font-size: 32rpx;
+}
+.r_userPoint image{
+  width: 32rpx;
+  height: 33rpx;
+}
+
+.r_rank_con{
+  width: 200rpx;
+  height: 100rpx;
+  margin-left: 50rpx;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: right;
+  
+}
+.r_conname{
+  width: 200rpx;
+  height: 40rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+.i_noRank{
+  width: 280rpx;
+  height: 317rpx;
+  margin-top: 100rpx;
+  font-size: 28rpx;
+}
+.i_noRank image{
+  width: 234rpx;
+  height: 100%;
+}

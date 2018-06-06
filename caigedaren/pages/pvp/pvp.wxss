@@ -1,0 +1,969 @@
+page {
+  width: 100%;
+  /* min-height: 100%; */
+  background-color: #410070;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+button::after {
+  border: none;
+}
+
+.pk-head {
+  width: 100%;
+  height: 250rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  /* justify-content: space-between; */
+}
+
+.pk-me {
+  width: 240rpx;
+  height: 140rpx;
+  background: linear-gradient(to right, #7e00f0, #ac00d9);
+  border-top-right-radius: 80rpx;
+  border-bottom-right-radius: 80rpx;
+  position: absolute;
+  left: 0;
+}
+
+.vs {
+  width: 10%;
+  margin-left: 45%;
+}
+
+.vs image {
+  width: 81rpx;
+  height: 109rpx;
+}
+
+.pk-you {
+  width: 240rpx;
+  height: 140rpx;
+  background: linear-gradient(to right, #2382e1, #7f13d7);
+  border-top-left-radius: 80rpx;
+  border-bottom-left-radius: 80rpx;
+  position: absolute;
+  right: 0;
+}
+
+.bor {
+  width: 120rpx;
+  height: 120rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50%;
+  background-color: lightgrey;
+  margin: 8rpx 0 0 105rpx;
+  overflow: hidden;
+}
+
+.bor image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.left {
+  margin: 8rpx 0 0 10rpx;
+}
+
+.u-name {
+  width: 300rpx;
+  margin: 20rpx 0 0 110rpx;
+  font-size: 30rpx;
+}
+
+.right {
+  margin: 20rpx 0 0 20rpx;
+}
+
+.opt {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding-top: 30%;
+}
+
+.opt image {
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.invite {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  background-color: #e040a7;
+}
+
+.bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: -10;
+}
+
+.bottom image {
+  width: 100%;
+  height: 104rpx;
+}
+
+.start {
+  padding-top: 120rpx;
+}
+
+.start-btn {
+  width: 460rpx;
+  height: 120rpx;
+  border-radius: 80rpx;
+  background-color: #e040a7;
+  text-align: center;
+  line-height: 120rpx;
+}
+
+.start-tit {
+  font-size: 30rpx;
+  padding-top: 50rpx;
+  text-align: center;
+}
+
+.show-me {
+  position: absolute;
+  left: 0;
+  top: 145rpx;
+}
+
+.show-me image {
+  width: 335rpx;
+  height: 475rpx;
+}
+
+.show-you {
+  position: absolute;
+  right: 0;
+  top: 470rpx;
+}
+
+.show-you image {
+  width: 302rpx;
+  height: 448rpx;
+}
+
+.show-vs {
+  position: absolute;
+  left: 26%;
+  top: 30%;
+  z-index: 100;
+}
+
+.show-vs image {
+  width: 390rpx;
+  height: 391rpx;
+}
+
+.me-bor {
+  width: 126rpx;
+  height: 126rpx;
+  border-radius: 50%;
+  background-color: lightgray;
+  position: absolute;
+  left: 160rpx;
+  top: 150rpx;
+  overflow: hidden;
+}
+
+.you-bor {
+  width: 126rpx;
+  height: 126rpx;
+  border-radius: 50%;
+  background-color: lightgray;
+  position: absolute;
+  right: 120rpx;
+  top: 25rpx;
+  overflow: hidden;
+}
+
+.me-bor image, .you-bor image {
+  width: 126rpx;
+  height: 126rpx;
+}
+
+.me-msg {
+  position: absolute;
+  font-size: 30rpx;
+  left: 140rpx;
+  top: 300rpx;
+}
+
+.you-msg {
+  position: absolute;
+  font-size: 30rpx;
+  left: 50rpx;
+  top: 180rpx;
+}
+
+/***模态框****/
+
+.model {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.w_content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+}
+
+.w_err {
+  width: 347rpx;
+  height: 237rpx;
+}
+
+.w_success {
+  width: 448rpx;
+  height: 360rpx;
+}
+
+.w_icon {
+  width: 100%;
+  height: 60rpx;
+  margin-top: 150rpx;
+  margin-bottom: 30rpx;
+  font-size: 40rpx;
+  color: #ffd200;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.w_icon image {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+.w_btn {
+  width: 340rpx;
+  height: 110rpx;
+  margin-top: 40rpx;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 110rpx;
+  border-radius: 60rpx;
+}
+
+.w_once {
+  color: #e040a7;
+  background-color: #fff;
+}
+
+.w_share {
+  color: #fff;
+  background-color: #e040a7;
+}
+
+.w_bottom {
+  width: 100%;
+  height: 60rpx;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  font-size: 34rpx;
+  color: #fff;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.w_bottom image {
+  width: 38rpx;
+  height: 38rpx;
+}
+
+/***游戏选项****/
+
+.w_game {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.w_game_sty {
+  position: relative;
+  width: 100%;
+  height: 50rpx;
+  text-align: center;
+}
+
+.w_game_sty image {
+  width: 147rpx;
+  height: 24rpx;
+}
+
+.w_game_sty view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 32rpx;
+  color: #e040a7;
+}
+
+.w_game_num {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 110rpx;
+  margin-top: 20rpx;
+}
+
+.w_game_num view {
+  width: 184rpx;
+  height: 60rpx;
+  background-color: #e040a7;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.w_num_left {
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+
+.w_num_right {
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+}
+
+.w_game_count {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  font-size: 60rpx;
+}
+
+.w_count_left {
+  margin-left: 30rpx;
+}
+
+.w_count_right {
+  margin-right: 30rpx;
+}
+
+.w_game_options {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 590rpx;
+}
+
+.w_progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35rpx;
+  height: 560rpx;
+  margin: 0 40rpx;
+  border: 1px solid #fff;
+  border-radius: 20rpx;
+}
+
+.w_progress_box {
+  display: flex;
+  align-items: flex-end;
+  width: 55%;
+  height: 95%;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.w_background {
+  width: 100%;
+  border-radius: 20rpx;
+  background-color: #3bc776;
+}
+
+.next {
+  width: 327rpx;
+  height: 197rpx;
+  position: fixed;
+  top: 25%;
+  left: 28%;
+  z-index: 999;
+}
+
+.next image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 327rpx;
+  height: 197rpx;
+  z-index: -1;
+}
+
+.next_cont {
+  text-align: center;
+  line-height: 197rpx;
+}
+
+.w_progress_p0 {
+  height: 0%;
+  animation: myProgress0 1s;
+}
+
+@keyframes myProgress0 {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 0%;
+  }
+}
+
+.w_progress_p1 {
+  height: 20%;
+  animation: myProgress1 1s;
+}
+
+@keyframes myProgress1 {
+  0% {
+    height: 0%;
+  }
+
+  100% {
+    height: 20%;
+  }
+}
+
+.w_progress_p2 {
+  height: 40%;
+  animation: myProgress2 1s;
+}
+
+@keyframes myProgress2 {
+  0% {
+    height: 20%;
+  }
+
+  100% {
+    height: 40%;
+  }
+}
+
+.w_progress_p3 {
+  height: 60%;
+  animation: myProgress3 1s;
+}
+
+@keyframes myProgress3 {
+  0% {
+    height: 40%;
+  }
+
+  100% {
+    height: 60%;
+  }
+}
+
+.w_progress_p4 {
+  height: 80%;
+  animation: myProgress4 1s;
+}
+
+@keyframes myProgress4 {
+  0% {
+    height: 60%;
+  }
+
+  100% {
+    height: 80%;
+  }
+}
+
+.w_progress_p5 {
+  height: 100%;
+  animation: myProgress5 1s;
+}
+
+@keyframes myProgress5 {
+  0% {
+    height: 80%;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+/* .w_progress_p6 {
+  height: 75%;
+  animation: myProgress6 1s;
+} */
+
+/* @keyframes myProgress6 {
+  0% {
+    height: 62.5%;
+  }
+
+  100% {
+    height: 75%;
+  }
+}
+
+.w_progress_p7 {
+  height: 87.5%;
+  animation: myProgress7 1s;
+}
+
+@keyframes myProgress7 {
+  0% {
+    height: 75%;
+  }
+
+  100% {
+    height: 87.5%;
+  }
+}
+
+.w_progress_p8 {
+  height: 100%;
+  animation: myProgress8 1s;
+}
+
+@keyframes myProgress8 {
+  0% {
+    height: 87.5%;
+  }
+
+  100% {
+    height: 100%;
+  }
+} */
+
+.w_game_select {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 570rpx;
+  height: 570rpx;
+}
+
+.word {
+  position: relative;
+  width: 520rpx;
+  height: 108rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  line-height: 108rpx;
+  color: #333;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+  background-color: #f9f1ff;
+  box-shadow: 0rpx 7rpx 0rpx #9400ff;
+}
+
+.active {
+  color: #ac3cfc;
+  background-color: #ff74f7;
+}
+
+.answer {
+  color: #333;
+  background-color: #3bc776;
+}
+
+.que {
+  color: #333;
+  background-color: #ef88ca;
+}
+
+.mask {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .2);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.conso{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.cont{
+  display: inline-block;
+  width: 60%;
+  height: 70rpx;
+  border: 5rpx solid lightgray;
+  border-radius: 60rpx;
+  margin: 3% 3% 0 3%;
+  /* text-indent: 30rpx; */
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 30rpx;
+}
+.picker{
+  background-color: #fff;
+  position: absolute;
+  right: 2%;
+  bottom: 0;
+  width: 15%;
+  height: 70rpx;
+  font-size: 30rpx;
+  padding: 0;
+  border-radius: 60rpx;
+  text-align: center;
+  line-height: 70rpx;
+}
+.send{
+  display: inline-block;
+  width: 15%;
+  height: 70rpx;
+  font-size: 30rpx;
+  padding: 0;
+  /* margin: 0 1%; */
+  border-radius: 60rpx;
+  position: absolute;
+  bottom: 0;
+}
+
+
+.mask-bg {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.abandon-bor {
+  width: 500rpx;
+  height: 261rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding-top: 30rpx;
+}
+
+.abandon-title {
+  /* font-size: 35rpx; */
+  padding-left: 50rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.abandon-cont {
+  padding-left: 50rpx;
+  font-size: 35rpx;
+  color: #999;
+  margin: 30rpx 0;
+}
+
+.abandon-btn {
+  display: flex;
+  padding-top: 30rpx;
+}
+
+.abandon-btn view {
+  font-size: 30rpx;
+  width: 50%;
+  text-align: center;
+}
+.btn-ok{
+  color: #01aa2c;
+}
+
+.match-subject__cd {
+  width: 116rpx;
+  position: absolute;
+  top: 80rpx;
+  left: 310rpx;
+  height: 116rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.match-subject__cd .text {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  color: #20d071;
+  font-size: 48rpx;
+  font-weight: 800;
+  /* z-index: 99; */
+}
+
+.circle-cd {
+  width: 58px;
+  height: 58px;
+  transform: rotate(-90deg);
+}
+
+.animation-scale {
+  animation: scaleFrames 1s infinite ease-in;
+}
+
+.match-main {
+  animation: mock 0.5s;
+}
+
+.animation-count-down, .animation-circle-count-down {
+  animation: mock 1s infinite;
+}
+
+@keyframes mock {
+  form {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleFrames {
+  0% {
+    transform: scale(10) rotate(120deg);
+    opacity: 0;
+  }
+
+  25% {
+    transform: scale(0.7) rotate(0deg);
+    opacity: 1;
+  }
+
+  30%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.match-subject__title {
+  font-size: 40rpx;
+  font-weight: 800;
+  text-align: center;
+}
+
+.match-subject__list {
+  padding: 56rpx;
+}
+
+.match-subject__item {
+  height: 100rpx;
+  line-height: 100rpx;
+  position: relative;
+  margin-bottom: 30rpx;
+  font-size: 36rpx;
+}
+
+.match-subject__item .content {
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 100rpx;
+  position: relative;
+  /* background: #fff;  */
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0 30rpx;
+  text-align: center;
+  overflow: hidden;
+}
+
+.match-subject__item radio {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.animation-next {
+  animation: next_page_frame 0.5s ease-in-out both;
+}
+
+.progress-circle {
+  position: relative;
+  padding: 0;
+  width: 116rpx;
+  height: 116rpx;
+  /* background-color: #e3e3e3; */
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 116rpx;
+  transform: rotate(-180deg);
+  /* z-index: 99; */
+}
+
+.progress-circle::after {
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  right: 10rpx;
+  bottom: 10rpx;
+  display: block;
+  border-radius: 50%;
+  /* background: #fff;  */
+  background: rgba(0, 0, 0);
+  content: " ";
+}
+
+.left-half-clipper {
+  border-radius: 116rpx;
+  width: 116rpx;
+  height: 116rpx;
+  position: absolute;
+  clip: rect(0, 116rpx, 116rpx, 58rpx);
+}
+
+.left-half-crow {
+  background-color: #000;
+  border-radius: 116rpx;
+  width: 116rpx;
+  height: 116rpx;
+  position: absolute;
+  clip-path: circle(35% at 50% 50%);
+}
+
+.progress-circle.over5 .left-half-clipper {
+  clip: rect(auto, auto, auto, auto);
+}
+
+.value-bar {
+  position: absolute;
+  clip: rect(0, 58rpx, 116rpx, 0);
+  width: 116rpx;
+  height: 116rpx;
+  border-radius: 50%;
+  border: 16rpx solid #3bc776;
+  box-sizing: border-box;
+}
+
+.progress-circle.over5 .first50-bar {
+  position: absolute;
+  clip: rect(0, 116rpx, 116rpx, 58rpx);
+  background-color: #3bc776;
+  border-radius: 50%;
+  width: 116rpx;
+  height: 116rpx;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.progress-circle .first50-bar {
+  display: none;
+}
+
+.progress-circle.over5 .first50-bar {
+  display: block;
+}
+
+.progress-circle .value-bar {
+  transition: opacity, transform 0.2s linear;
+}
+
+/* Progress bar rotation position */
+
+.progress-circle.p0 .value-bar {
+  display: none;
+}
+
+.progress-circle.p1 .value-bar {
+  transform: rotate(-36deg);
+}
+
+.progress-circle.p2 .value-bar {
+  transform: rotate(-72deg);
+}
+
+.progress-circle.p3 .value-bar {
+  transform: rotate(-108deg);
+}
+
+.progress-circle.p4 .value-bar {
+  transform: rotate(-144deg);
+}
+
+.progress-circle.p5 .value-bar {
+  transform: rotate(-180deg);
+}
+
+.progress-circle.p6 .value-bar {
+  transform: rotate(-216deg);
+}
+
+.progress-circle.p7 .value-bar {
+  transform: rotate(-252deg);
+}
+
+.progress-circle.p8 .value-bar {
+  transform: rotate(-288deg);
+}
+
+.progress-circle.p9 .value-bar {
+  transform: rotate(-324deg);
+}
+
+.progress-circle.p10 .value-bar {
+  transform: rotate(-360deg);
+}
+
+.aon{
+position: absolute;
+white-space:nowrap;/* 防止向下换行*/
+}
+.doommview{
+  z-index: 3;
+  height: 80%;
+  width: 100%;
+  position: absolute;
+}
+/**定义从右边向左边的移动的动画**/
+@keyframes first{
+  from{left: 100%; }
+  to{left: -100%;}
+}

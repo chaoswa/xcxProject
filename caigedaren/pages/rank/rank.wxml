@@ -1,0 +1,74 @@
+<view class='container'>
+
+  <view class='c_select'>
+    <view class="{{friend?'active':'default'}}" bindtap='select_friend'>好友排行</view>
+    <view class="{{world?'active':'default'}}" bindtap='select_world'>世界排行</view>
+  </view>
+  
+  <view class='c_rank' wx:if="{{friend}}">
+    <view class='c_rank_list' wx:for="{{rank_friend}}" wx:key='index'>
+        <image src='../../images/c_{{index}}.png' class='c_scord' wx:if="{{index<4&&index>0}}"></image> 
+        <view class='c_listLeft' wx:if="{{index>=4}}">{{index}}</view>
+        <view class='c_img_border'>
+          <image src='{{item.avatarurl}}'></image>
+        </view>
+        <view class='c_rank_name'>
+          <view class='c_username'>{{item.nickname}}</view>
+        </view>
+        <view class='r_rank_con'>
+          <!-- <view class='r_conname'>来自：武汉</view> -->
+          <view class='r_userPoint'>
+            <image src='../../images/i_point.png'></image>
+            <view>×{{item.score}}</view>
+          </view>
+        </view>
+    </view>
+  </view>
+
+  <view class='c_rank' wx:if="{{world}}">
+    <view class='c_rank_list' wx:for="{{rank_world}}" wx:key='index'>
+        <image src='../../images/c_{{index}}.png' class='c_scord' wx:if="{{index<4&&index>0}}"></image> 
+        <view class='c_listLeft' wx:if="{{index>=4}}">{{index}}</view>
+        <view class='c_img_border'>
+          <image src='{{item.avatarurl}}'></image>
+        </view>
+        <view class='c_rank_name'>
+          <view class='c_username'>{{item.nickname}}</view>
+        </view>
+        <view class='r_rank_con'>
+          <!-- <view class='r_conname'>来自：武汉</view> -->
+          <view class='r_userPoint'>
+            <image src='../../images/i_point.png'></image>
+            <view>×{{item.score}}</view>
+          </view>
+        </view>
+    </view>
+  </view>
+
+  <view class='c_myself'>
+        
+    <view class='c_myself_name'>
+      <view class='c_myself_user'>{{my_rank.sort}}</view>
+      <view class='c_userPoint'>
+        <view>我的排名</view>
+      </view>
+    </view>
+    <view class='c_img_border'>
+      <image src='{{my_rank.avatarurl}}'></image>
+    </view>
+     <view class='c_username'>{{my_rank.nickname}}</view>
+    <view class='c_rank_con'>
+      <view class='r_userPoint'>
+        <image src='../../images/i_point.png'></image>
+        <view>×{{my_rank.score}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='i_noRank' wx:if="{{isNoRank}}">
+    <image src='../../images/i_noRank.png'></image>
+    <view>您还没有邀请好友呢</view>
+  </view>
+
+
+</view>

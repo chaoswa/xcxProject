@@ -1,0 +1,12 @@
+<view class='complaint'>
+  <view class='complaint-title'>请选择投诉原因 (请选择一项)</view>
+  <view class='complaint-cont' wx:for='{{complaint}}' wx:key='{{item}}'>
+    <view class='complaint-detail' data-id='{{index}}' bindtap='click'>
+      {{item}}
+      <view class="yes {{currentItem===index? 'show':''}}">✔</view>
+    </view>
+  </view>
+  <view class='complaint-bottom'>
+    <button type="warn" bindtap='back'>确认投诉</button>
+  </view>
+</view>

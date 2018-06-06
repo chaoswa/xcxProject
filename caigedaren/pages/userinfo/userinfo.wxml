@@ -1,0 +1,84 @@
+<view class='container'>
+
+  <button class="openBtn" open-type="contact">
+    <image src='../../images/userinfo/open.png'></image>
+  </button>
+  <view class='tousu' bindtap='goComplaint'>
+    <image src='../../images/userinfo/tousu.png'></image>
+    投诉
+  </view>
+
+
+  <view class='user-msg'>
+    <view class='love' bindtap='myLike'>
+      <image src='../../images/userinfo/love.png'></image>我的收藏</view>
+    <view class='avaurl'>
+      <open-data type='userAvatarUrl'></open-data>
+    </view>
+    <view class='name'>
+      <open-data type='userNickName'></open-data>
+    </view>
+    <view class='user-total'>
+      <view class='user-cont'>
+        <view class='user-title'>积分</view>
+        <view class='user-num'>{{userInfo.score}}</view>
+      </view>
+      <view class='user-cont'>
+        <view class='user-title'>音乐币</view>
+        <view class='user-num'>{{userInfo.gold}}</view>
+      </view>
+    </view>
+    <view class='border mar-top'>
+      <view class='border-title'>挑战模式</view>
+      <view class='border-detail'>
+        <view class='det'>总场次
+          <view class='border-num'>{{userInfo.challenge_all}}</view>
+        </view>
+        <view class='det'>胜局
+          <view class='border-num'>{{userInfo.challenge_success}}</view>
+        </view>
+        <view class='det'>胜率
+          <view class='border-num'>{{winChallengeRate}}%</view>
+        </view>
+      </view>
+    </view>
+    <view class='border'>
+      <view class='border-title'>练习模式</view>
+      <view class='border-detail'>
+        <view class='det'>关卡
+          <view class='border-num'>{{userInfo.practice_all}}</view>
+        </view>
+        <view class='det'>正确
+          <view class='border-num'>{{userInfo.practice_success}}</view>
+        </view>
+        <view class='det'>正确率
+          <view class='border-num'>{{winPracticeRate}}%</view>
+        </view>
+      </view>
+    </view>
+    <!--bg  -->
+    <image class='user-bg' src='../../images/userinfo/bg.png'></image>
+  </view>
+
+  <view class='record'>
+    <view class='record-top'>
+      <image src='../../images/userinfo/record.png'></image>
+    </view>
+    <view class='record-cont' wx:if='{{isHave}}'>
+      <image src='../../images/userinfo/record_no.png'></image>
+    </view>
+
+    <view class='content' wx:for="{{prizes}}" wx:key="index">
+      <view class='more-img'>
+        <image src="https://xcx004.chaosuduokai.com/uploads/{{item.good_img}}"></image>
+      </view>
+      <view class='play-content'>
+        <view class='content-title'>{{item.good_name}}</view>
+        <view class='content-txt'>{{item.created_at}}</view>
+      </view>
+      <view class='play-btn'>{{item.status}}</view>
+
+    </view>
+  </view>
+
+</view>

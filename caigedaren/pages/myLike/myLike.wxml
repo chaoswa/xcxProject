@@ -1,0 +1,28 @@
+<!--pages/myLike/myLike.wxml-->
+<view class="container">
+  <view class='e_top'>
+    <view class='e_title'>我的歌单</view>
+    <view class='e_num'>已经收藏了 <text>{{music_list.length}}</text> 首歌</view>
+    <view class='e_bar'></view>
+
+    <view class='e_list' wx:if='{{!have_music}}'>
+      <view class='e_music' wx:for='{{music_list}}' wx:key=''  >
+        <view class='e_music_left'>{{index+1}}.{{item.title}}</view>
+        <view class='e_music_right'>
+          <image src='../../images/e_del.png' bindtap='del_click' id="{{index}}"></image>
+          <button class='e_music_share' open-type='share'><image src='../../images/e_share.png'></image></button>
+        </view>
+        <view class='e_music_play'  catchtap='start_play' data-play='{{index}}' id='{{index}}'>
+          <image src='../../images/e_pause.png'></image>
+          <image class='e_pauseBtn' src='../../images/e_play.png' wx:if="{{dataPlay==index?isPlay:''}}"></image> 
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='e_text' wx:if='{{have_music}}'>先去猜歌收藏自己喜欢的歌曲吧！</view>
+
+  <view class='e_start' bindtap='start_game'>开始猜歌</view>
+</view>
+
+

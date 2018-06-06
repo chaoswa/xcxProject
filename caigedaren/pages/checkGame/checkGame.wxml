@@ -1,0 +1,124 @@
+<!--pages/game/game.wxml-->
+<view class="container">
+  <view class='bg'>
+
+    <view class='playGame'>
+
+      <view class='game'>
+        <view class='navbar'>
+          <view class='g_topleft'>
+            <image src='../../images/g_icon.png'></image>{{musicInfo.data.gold}}
+          </view>
+          <view class='g_topmiddle'>
+            第<text> {{musicInfo.data.practice_num+1}} </text>题
+          </view>
+          <view class='g_topright'>
+            <view bindtap='collect_click'>
+              <image src='../../images/g_bai.png' wx:if="{{!isCollect}}"></image>
+              <image src='../../images/g_xin.png' wx:if="{{isCollect}}"></image>
+            </view>
+            <view class='navbar-btn'>
+            {{times}}
+          </view>
+          </view>
+        </view>
+
+        <view class='game-img'>
+          <image src='../../images/card01.png' class='gameImgl'></image>
+          <image src='../../images/card02.png' class="{{isErr||isSucess?'gameImgStop':'gameImgM'}}"></image>
+          <image src='../../images/card03.png' class='gameImgR'></image>
+        </view>
+
+        <view class='game-name'>猜歌名</view>
+
+        <view>
+          <view class='keyword'  >
+            <view class="word {{dataSelect==index?'active':'default'}}" wx:for="{{musicInfo.data.song.options_title}}" wx:key='index' bindtap='select_click' id='{{index}}' data-select='{{index}}'>{{item}}</view>
+          </view>
+        </view> 
+    
+        <audio  src="{{src}}" id="myAudio" ></audio>
+        <audio  src="{{src2}}" id="myBg"></audio>
+
+      </view>
+
+    </view>
+
+
+  </view>
+  
+  <!-- 底部浪花图片 -->
+  <view class='g_gameBottom'>
+    <image src='../../images/g_gameBottom.png'></image>
+  </view>
+
+  <!-- 回答正确弹窗 -->
+  <view  class='model' wx:if='{{isSucess}}'>
+    <view class='g_model_content'>
+      <image src='../../images/g_ok.png' class='g_model_pic'></image>
+      <view class='g_model_info'>
+        <view class='g_model_close' bindtap='model_close_click'>×</view>
+        <view class='g_model_title'>回答正确</view>
+        <view class='g_model_music'>
+          <image src='../../images/g_img.gif'></image>
+        </view>
+        <view class='g_model_text'>
+          <view>{{songer}}</view>
+          <view>《{{music_name}}》</view>
+        </view>
+        <view class='g_model_point'>
+          <image src='../../images/g_point.png'></image> +100
+        </view>
+        <view class='g_model_btn' bindtap='next_song_click'>下一首</view>
+      </view>
+    </view>
+  </view> 
+
+
+  <!-- 回答错误弹窗 -->
+  <view  class='model' wx:if='{{isErr}}'>
+    <view class='g_model_content'>
+      <image src='../../images/g_err.png' class='g_model_err'></image>
+      <view class='g_model_info'>
+        <view class='g_model_close' bindtap='model_close_click'>×</view>
+        <view class='g_model_title'>回答错误</view>
+        <view class='g_model_music'>
+          <image src='../../images/g_img.gif'></image>
+        </view>
+        <view class='g_model_text'>
+          <view>{{songer}}</view>
+          <view>《{{music_name}}》</view>
+        </view>
+        <view class='g_model_point'>
+          <image src='../../images/g_point.png'></image> -50
+        </view>
+        <button class='g_model_errbtn' open-type='share'>约朋友一起猜</button>
+      </view>
+    </view>
+  </view> 
+
+
+  <!-- 连续回答10题后弹窗 -->
+  <view  class='model' wx:if='{{isTen}}'>
+    <view class='g_model_content'>
+      <image src='../../images/g_ok.png' class='g_model_pic'></image>
+      <view class='g_model_info'>
+        <view class='g_model_close' bindtap='model_close_click'>x</view>
+        <view class='g_model_title'>回答正确</view>
+        <view class='g_model_goble'>
+          <image src='../../images/g_gble.png'></image>
+        </view>
+        <view class='g_model_point'>
+          <image src='../../images/g_point.png'></image> +10
+        </view>
+        <view class='g_model_textTen'>
+          <view>参加挑战模式,获得奖品</view>
+        </view>
+        <view class='g_model_btn' bindtap='go_challenge_click'>去挑战模式</view>
+        <view class='g_model_next' bindtap='next_song_click'>下一首</view>
+      </view>
+    </view>
+  </view> 
+
+</view>
+

@@ -1,0 +1,175 @@
+<!--index.wxml-->
+<view class="container" wx:if='{{true}}'>
+
+  <view class='oneself'>
+    <navigator class='onself-bor' url="../userinfo/userinfo" open-type="navigate">
+      <view class='big-bor'>
+        <view class='big-bor1'>
+          <open-data type='userAvatarUrl'></open-data>
+        </view>
+      </view>
+      <view class='name'>
+        <open-data type='userNickName'></open-data>
+      </view>
+      <view class='score'>
+        <image class='gold' src='../../images/index/gold_icon.png'></image>
+        <text>{{user_msg.score}}</text>
+      </view>
+    </navigator>
+
+    <image class='oneself-bg' src='../../images/index/me_msg.png'></image>
+  </view>
+
+  <view class='top'>
+
+    <!--挑战模式  -->
+    <navigator class='challenge' url="../classify/classify" open-type="navigate">
+      <view class='title'>挑战模式</view>
+      <view class='challenge-renwu'>
+        <image src='../../images/index/notes.png'></image>{{user_msg.online_user}}人在线</view>
+      <view class='microphone'>
+        <image src='../../images/index/microphone.png'></image>
+      </view>
+      <image class='challenge-bg' src='../../images/index/bg_style1.png'></image>
+    </navigator>
+
+    <!--排行榜  -->
+    <navigator class='rank' url="../rank/rank" open-type="navigate">
+      <view class='title'>排行榜</view>
+      <view class='rank-img'>
+        <image src='../../images/index/rank_icon.png'></image>
+      </view>
+      <image class='rank-bg' src='../../images/index/bg_style.png'></image>
+    </navigator>
+
+    <!--商城  -->
+    <navigator class='store' url="../store/store" open-type="navigate">
+      <view class='title'>商城</view>
+      <view class='store-img'>
+        <image src='../../images/index/store.png'></image>
+      </view>
+      <image class='store-bg' src='../../images/index/bg_style.png'></image>
+    </navigator>
+
+    <!--练习模式  -->
+    <navigator class='exercise' url="../checkPoint/checkPoint" open-type="navigate">
+      <view class='title'>练习模式</view>
+      <view class='exercise-cont'>第
+        <text>{{user_msg.practice_num}}</text> 关</view>
+      <view class='exercise-img'>
+        <image class='record' src='../../images/index/record.png'></image>
+        <image class='record1' src='../../images/index/record1.png'></image>
+      </view>
+      <image class='exercise-bg' src='../../images/index/bg_style2.png'></image>
+    </navigator>
+
+    <!--更多精彩  -->
+    <view class='more-exciting animated swing' bindtap='toPVP'>
+      <!--好友对战  -->
+      <image src='../../images/index/pvp.png'></image>
+    </view>
+
+    <!--更多好玩  -->
+    <view class='more-play'>
+      <view class='title'>更多好玩</view>
+      <view class='play-img'>
+        <image src='../../images/index/more_icon.png'></image>
+      </view>
+      <image class='play-bg' src='../../images/index/bg_style.png'></image>
+    </view>
+
+  </view>
+
+  <view class='banner' bindtap='toPrizes'>
+    <image src='../../images/index/banner.png'></image>
+  </view>
+  <view class='index-bg'>
+    <image src='../../images/index/bg_bottom.png'></image>
+  </view>
+
+  <!--参与挑战赢好礼 -->
+  <view class='souvenir' bindtap='toGuidance'>
+    <view class='souvenir-title'>参与挑战领好礼</view>
+    <image class='souvenir-img' src='../../images/index/libao.png'></image>
+  </view>
+
+  <!--关注公总号 -->
+  <view class='public'>
+    <view class='public-img'>
+      <image src='../../images/index/dolls.png'></image>
+    </view>
+    <view class='public-title' wx:if='{{subscribeShow}}' bindtap='openGuide'>关注公众号</view>
+    <button class='public-title' open-type="contact" wx:if='{{contactShow}}'>客服小助手</button>
+  </view>
+
+</view>
+
+<!--创建快捷方式  -->
+<view class='mask' wx:if='{{is_new_user}}' bindtap='closeShortcut'>
+  <image class='shortcut' src='../../images/index/shortcut_icon.png'></image>
+</view>
+
+<!--每日登陆  -->
+<view class='mask' wx:if='{{loginAward}}'>
+  <view class='login-title'>
+    <image src='../../images/index/login_title.png'></image>
+  </view>
+  <view class='login-border'>
+    <view class='login-frame'>
+      <!--每日登陆金币  -->
+      <block wx:for='{{loginAwardList}}' wx:key='{{index}}'>
+        <view class="login-one {{index==user_msg.getGoldDate?'login-one-bor':''}}">
+          <!--已领取user_msg.getGoldDate  -->
+          <view class='login-get' wx:if='{{index<user_msg.getGoldDate}}'>
+            <image src='../../images/index/get.png'></image>
+          </view>
+          <view class='one-top'>第{{index}}天</view>
+          <view class='one-bottom '>
+            <view class='gold-icon'>
+              <image src='../../images/index/gold_icon1.png'></image>
+            </view>
+            <view class='gold-count'>+{{item}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!--领取  -->
+  <view class='get-btn' bindtap='loginAwardGet'>立即领取</view>
+</view>
+
+<!--引导关注公众号 -->
+<view class='mask' wx:if='{{guide}}' bindtap='hideGuide'>
+  <view class='guide'>
+    <image src='https://mp3tiaozhandashi.chaosuduokai.com/images/gzh.png'></image>
+  </view>
+</view>
+
+<!--关注奖励 -->
+<view class='mask' wx:if='{{subscribe}}'>
+  <view class='attention'>
+    <image src='../../images/index/gzjl.png'></image>
+    <view class='btn-attention' bindtap='getSubscribe'>领取</view>
+  </view>
+</view>
+
+<!--登陆界面 -->
+<view class='login' wx:if='{{showLogin}}'>
+  <view class='login-bor'>
+    <view class='login-tit'>授权作用，了解一下</view>
+    <view class='login-word'>
+      点击下方授权按钮进行授权，否则部分功能将无法使用，奖品可能无法兑换
+      <view class='login-des'>（您的资料100%安全加密，不用担心）</view>
+    </view>
+    <view class='login-btn'>
+      <view class='login-not' bindtap='scope'>
+        <image src='../../images/index/btn_bg2.png'></image>
+      </view>
+      <button open-type='getUserInfo' bindgetuserinfo="getUserInfo" class='user'>
+        登陆
+        <image src='../../images/index/btn_bg1.png'></image>
+      </button>
+    </view>
+
+  </view>
+</view>

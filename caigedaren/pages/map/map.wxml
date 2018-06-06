@@ -1,0 +1,19 @@
+<!--pages/map/map.wxml-->
+<view class="container">
+  <view class='m_title'>
+    <image src='../../images/m_title.png'></image>
+  </view>
+  <block wx:for="{{mapList}}" wx:key=''>
+    <view class='m_list' bindtap='goMap' data-key='{{item.key}}'>
+      <image src='../../images/m_have.png'></image>
+      <view class='m_list_txt'>{{item.key}}-{{item.count}}</view>
+    </view>
+  </block>
+
+  <view class='m_list'>
+    <image src='../../images/m_not.png'></image>
+    <view class='m_list_not'>未解锁...</view>
+  </view> 
+
+  <image src='../../images/m_icon.png' class='m_icon'></image>
+</view>

@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/ad/ad",
+    "pages/userinfo/userinfo",
+    "pages/address/address",
+    "pages/challenge/challenge",
+    "pages/classify/classify",
+    "pages/store/store",
+    "pages/myLike/myLike",
+    "pages/checkPoint/checkPoint",
+    "pages/map/map",
+    "pages/checkGame/checkGame",
+    "pages/rank/rank",
+    "pages/guidance/guidance",
+    "pages/logs/logs",
+    "pages/pvp/pvp"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#410070",
+    "navigationBarBackgroundColor": "#410070",
+    "navigationBarTitleText": "极限猜歌达人",
+    "navigationBarTextStyle": "white"
+  }
+}

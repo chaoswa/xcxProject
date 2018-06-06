@@ -1,0 +1,178 @@
+<view class='container'>
+  <!--对战信息  -->
+  <view class='pk-head' wx:if='{{pkMsg}}'>
+    <view class='pk-me'>
+      <view class='bor'>
+        <image src='{{my_info.avatarurl}}'></image>
+      </view>
+      <view class='u-name'>{{my_info.nickname}}</view>
+    </view>
+    <view class='vs' wx:if='{{vs}}'>
+      <image src='../../images/pvp/vs1.png'></image>
+    </view>
+
+    <!--倒计时  -->
+    <view class='match-subject__cd' wx:if='{{time}}'>
+      <view class='media'>
+        <view class='progress-circle {{"p" + (circle_count_down_number)}} {{(circle_count_down_number >= 5) ? "over5" : ""}} {{circle_count_down ? "animation-progress" : ""}}'>
+          <view class="left-half-clipper">
+            <view class="first50-bar"></view>
+            <view class="value-bar"></view>
+          </view>
+          <view class="left-half-crow">
+          </view>
+        </view>
+        <view class='text'>
+          <view class='n' hidden='{{!circle_count_down}}'>{{circle_count_down_number}}</view>
+          <view class='n' hidden='{{circle_count_down}}'>0</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='pk-you'>
+      <view class='bor left'>
+        <image src='{{you_info.avatarurl}}'></image>
+      </view>
+      <view class='u-name right'>{{you_info.nickname}}</view>
+    </view>
+  </view>
+
+  <!--放弃/邀请  -->
+  <view class='opt' wx:if='{{wait}}'>
+    <view class='abandon' bindtap='abandon'>
+      <image src='../../images/pvp/abandon.png'></image>
+    </view>
+    <button open-type='share' class='invite'>
+      <image src='../../images/pvp/invite.png'></image>
+    </button>
+  </view>
+
+  <!--确认答题  -->
+  <view class='start' wx:if='{{my_info.gameStart}}'>
+    <view class='start-btn' bindtap='startGame'>开始答题</view>
+    <view class='start-tit'>共5道题，每题10秒答题时间</view>
+  </view>
+
+  <!--开始pk  -->
+  <view class='show' wx:if='{{showPk}}'>
+    <view class='show-me animated slideInLeft'>
+      <view class='me-bor'>
+        <image src='{{my_info.avatarurl}}'></image>
+      </view>
+      <view class='me-msg'>
+        <view class='me-name'>{{my_info.nickname}}</view>
+        <view class='me-city'>来自：湖北</view>
+        <view class='me-admission'>入场费：</view>
+      </view>
+      <image src='../../images/pvp/me_bor.png'></image>
+    </view>
+    <view class='show-vs animated flip'>
+      <image src='../../images/pvp/vs2.png'></image>
+    </view>
+    <view class='show-you animated slideInRight'>
+      <view class='you-bor'>
+        <image src='{{you_info.avatarurl}}'></image>
+      </view>
+      <view class='you-msg'>
+        <view class='you-name'>{{you_info.nickname}}</view>
+        <view class='you-city'>来自：湖北</view>
+        <view class='you-admission'>入场费：</view>
+      </view>
+      <image src='../../images/pvp/you_bor.png'></image>
+    </view>
+  </view>
+
+  <!--游戏界面 -->
+  <view class='w_game' wx:if='{{gameShow}}'>
+    <view class='w_game_sty'>
+      <image src='../../images/pvp/w_tyl_img.png'></image>
+      <view>{{songList.type}}</view>
+    </view>
+
+    <view class='w_game_num'>
+      <view class='w_num_left'> 连击 ×{{my_num}}</view>
+      <view class='w_num_right'> ×{{you_num}} 连击</view>
+    </view>
+
+    <view class='w_game_count'>
+      <view class='w_count_left'> {{my_info.gold}}</view>
+      <view class='w_count_right'> {{you_info.gold}}</view>
+    </view>
+    <view class='w_game_options'>
+
+      <view class='w_progress'>
+        <view class='w_progress_box'>
+          <view class='w_background w_progress_p{{my_info.correct}}'></view>
+        </view>
+      </view>
+
+      <view class='w_game_select'>
+        <view class="word {{item}}" wx:for="{{options}}" wx:key='' bindtap='select_click' id='{{index}}' data-select='{{index}}'>{{index}}</view>
+      </view>
+      <view class='w_progress'>
+        <view class='w_progress_box'>
+          <view class='w_background w_progress_p{{you_info.correct}}'></view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <!--挑战失败 -->
+  <view class='model' wx:if='{{showFram}}'>
+    <view class='w_content'>
+      <image src='../../images/pvp/w_err.png' class='w_err' wx:if='{{err}}'></image>
+      <image src='../../images/pvp/w_succs.png' class='w_success' wx:if='{{success}}'></image>
+      <view class='w_icon' wx:if='{{showGold}}'>
+        <image src='../../images/pvp/w_icon.png'></image> +10
+      </view>
+      <view class='w_btn w_once' bindtap='againRound'>再来一局</view>
+      <button class='w_btn w_share' open-type='share'>炫耀战绩</button>
+      <view class='w_bottom'>
+        分享到微信群，跟好友一起对战
+      </view>
+    </view>
+  </view>
+
+  <view class='next' wx:if='{{next}}'>
+    <image src='../../images/pvp/next_bg.png'></image>
+    <view class='next_cont'>第 {{cont}} 首</view>
+  </view>
+
+  <!--bg  -->
+  <view class='bottom'>
+    <image src='../../images/g_gameBottom.png'></image>
+  </view>
+</view>
+
+<!--围观者的遮罩  -->
+<view class='mask' wx:if='{{mask}}'>
+  <view class="doommview">
+    <block wx:for='{{doommData}}' wx:key=''>
+      <text class='aon' wx:if="{{item.display}}" class="aon" style="animation: first {{item.time}}s linear forwards;top:{{item.top}}%;color:{{item.color}};">
+        {{item.text}}
+      </text>
+    </block>
+  </view>
+  <view class='conso'>
+    <input class='cont' type='text' value='{{bullet}}' name='bullet' bindinput='getBullet' placeholder='请输入弹幕'></input>
+    <picker class="picker" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <!-- <view class="hot"> -->
+        热词
+      <!-- </view> -->
+    </picker>
+    <button class='send' bindtap='send'>发送</button>
+  </view>
+</view>
+
+<!--点击放弃  -->
+<view class='mask-bg' wx:if='{{abandon}}'>
+  <view class='abandon-bor'>
+    <view class='abandon-title'>提 示</view>
+    <view class='abandon-cont'>确认要退出房间吗？</view>
+    <view class='abandon-btn'>
+      <view class='btn-clo' bindtap='closeAbandon'>取消</view>
+      <view class='btn-ok' bindtap='gobackIndex'>确认</view>
+    </view>
+  </view>
+</view>

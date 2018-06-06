@@ -1,0 +1,53 @@
+/* pages/address/address.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #410070;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 80rpx;
+  border-top-right-radius: 80rpx;
+  background-color: #410070;
+}
+.body{
+  width: 690rpx;
+  height: 850rpx;
+  margin-top: 40rpx;
+}
+.inword{
+  width: 690rpx;
+  height: 105rpx;
+  display: flex;
+  align-items: center;
+}
+.wordtxt{
+  width: 160rpx;
+  height: 70rpx;
+  display: inline-block;
+  font-size: 28rpx;
+  line-height: 70rpx;
+}
+.wordcontent{
+  width: 500rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  color: #999;
+  background-color: #fff;
+  display: inline-block;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+
+.btn-area{
+  margin: 80rpx auto;
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 35rpx;
+  color: #fff;
+  border-radius: 50rpx;
+  background-color: #6413be;
+}

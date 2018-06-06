@@ -1,0 +1,222 @@
+page {
+  width: 100%;
+  background-color: #410070;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #fff;
+}
+ .notes{
+  position: absolute;
+  bottom: -200rpx;
+  z-index: -10; 
+} 
+.notes image{
+  width: 373rpx;
+  height: 481rpx;
+}
+.index-bg {
+  width: 100%;
+  height: 104rpx;
+}
+
+.index-bg image {
+  width: 750rpx;
+  height: 104rpx;
+}
+
+.content {
+  width: 100%;
+  height: auto;
+}
+.bottom{
+  margin-bottom: 100rpx;
+}
+
+/* 我的歌单文字 */
+
+.content_text {
+  display: block;
+  flex-direction: row;
+  font-size: 30rpx;
+  width: 92%;
+  margin: 40rpx 4%;
+}
+
+/* 类型大盒子 */
+
+.content_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 94%;
+  margin: 0 3% 30rpx 3%;
+}
+
+/* 单个小盒子 */
+
+.content_list_info {
+  width: 220rpx;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5% 1%;
+  position: relative;
+}
+
+/* .图片 */
+
+.content_list_info_img {
+  width: 100%;
+  height: 170rpx;
+}
+
+/* 名称 */
+
+.content_list_info_text {
+  width: 100%;
+  height: 50rpx;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 50rpx;
+  background: linear-gradient(#bf00d5, #8c00ec);
+}
+
+/* 需要錢 */
+
+.money_box {
+  position: absolute;
+  width: 100%;
+  height: 170rpx;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  line-height: 170rpx;
+  font-size: 28rpx;
+}
+
+/* 彈框——金幣足夠時 */
+
+.money_ok_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.money_close{
+  position: absolute;
+  top:10rpx;
+  right: 10rpx;
+  width: 50rpx;
+  height: 50rpx;
+  color: #000;
+  font-size: 40rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.money_ok {
+  position: absolute;
+  top: 320rpx;
+  width: 460rpx;
+  left: 145rpx;
+  right: 145rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  text-align: left;
+  z-index: 999;
+}
+
+.money_ok .img2 {
+  width: 29rpx;
+  height: 30rpx;
+  position: absolute;
+  top: -10rpx;
+  left: 150rpx;
+  z-index: 9999;
+}
+
+.money_ok_box .img1 {
+  width: 135rpx;
+  height: 200rpx;
+  position: absolute;
+  top: 183rpx;
+  left: 290rpx;
+}
+
+.money_ok .text_1 {
+  font-size: 24rpx;
+  color: #333;
+  display: block;
+  text-align: left;
+  margin: 45rpx 0 25rpx 30rpx;
+}
+
+.money_ok .text_2 {
+  font-size: 28rpx;
+  color: #333;
+  margin-left: 30rpx;
+  display: block;
+  text-indent: 2em;
+  line-height: 42rpx;
+}
+
+.money_ok .text_2 text {
+  color: #ffa800;
+}
+
+.btn_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 50rpx 0 45rpx 0;
+}
+.btn_1,.btn_2 {
+  width: 200rpx;
+  height: 60rpx;
+  color: #000;
+  /* line-height: 60rpx; */
+  background: #bfbfbf;
+  border-radius: 50rpx;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  border: none;
+  /* position: inherit; */
+  text-align: center;
+}
+.btn_2::after{
+  border: none;
+}
+
+.money_ok .btn_2 {
+  color: #fff;
+  background: #6b15a9;
+}
+
+/* 金幣不足時 */
+
+.money_no_box .money_ok .btn_box {
+  display: flex;
+  flex-direction: column;
+}
+
+.money_no_box button {
+  width: 340rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  background: #fff;
+  border: 2px solid #6b15a9;
+  color: #6b15a9;
+}
+
+.money_no_box .money_ok .btn_2 {
+  background: #6b15a9;
+  color: #fff;
+  margin: 10rpx auto 0 auto;
+}

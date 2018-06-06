@@ -1,0 +1,396 @@
+/* pages/game/game.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background-color: #410070;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;  
+}
+
+.times{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.times-img{
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 100rpx;
+  border-radius: 70rpx;
+  border: 1px solid #a4c5ff;
+}
+ .times-img image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 70rpx;
+} 
+.times-user{
+  width: 230rpx;
+  height: 50rpx;
+  margin-top: 30rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 32rpx;
+}
+.gameImgM{
+  position: absolute;
+  display: block;
+  width: 554rpx;
+  height:536rpx;
+  top:5%;
+  left: 10%;
+  animation:circle 5s infinite linear;
+}
+.gameImgStop{
+  position: absolute;
+  display: block;
+  width: 554rpx;
+  height:536rpx;
+  top:5%;
+  left: 10%;
+}
+
+@keyframes circle{
+  0%{ transform: rotate(0deg); }
+  100%{ transform: rotate(360deg); }
+}
+
+.gameImgR{
+  position: absolute;
+  display: block;
+  width: 170rpx;
+  height:190rpx;
+  top:20%;
+  left: 55%;
+}
+
+.game{
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.navbar{
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 690rpx;
+  height: 125rpx;
+}
+.g_topleft{
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 32rpx;
+  text-align: left;
+  margin-left: 10rpx;
+  overflow: hidden;
+}
+.g_topleft image{
+  width: 33rpx;
+  height: 35rpx;
+  margin-right: 10rpx;
+}
+.g_topmiddle{
+  width: 180rpx;
+  height: 60rpx;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  background-color: #34005a;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+
+.g_topmiddle text{
+  color: #c600ff;
+  font-size: 34rpx;
+}
+.g_topright{
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 150rpx;
+  height: 80rpx;
+}
+.g_topright image{
+  width: 44rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}
+.g_times{
+  position: absolute;
+  top:10%;
+  right: 5%;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+}
+
+.g_gameBottom{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -100;
+  width: 750rpx;
+  height: 104rpx;
+}
+.g_gameBottom image{
+  width: 100%;
+  height: 100%;
+}
+
+.nav-content{
+  display: flex;
+  flex-flow: column;
+  margin-left: 10rpx;
+  justify-content: center;
+  text-align: left;
+  width: 320rpx;
+  height: 100%;
+}
+.nav-name{
+  width: 100%;
+  height: 40rpx;
+  line-height:40rpx;
+  color: #fff;
+  font-size: 32rpx;
+}
+.nav-num{
+  width: 320rpx;
+  height: 40rpx;
+  line-height:40rpx;
+  color: #fff;
+  font-size: 26rpx;
+}
+.nav-num text{
+ color: #da2dfe;
+}
+.nav-user{
+  width: 105rpx;
+  height: 105rpx;
+  border-radius: 60rpx;
+  border: 2px solid #fff;
+}
+.nav-user image{
+  width: 105rpx;
+  height: 105rpx;
+  border-radius: 60rpx;
+}
+
+.btn-txt{
+  width: 120rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  line-height: 70rpx;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 70rpx;
+}
+.navbar-btn{
+  width: 60rpx;
+  height:60rpx;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: linear-gradient(#921fce, #480ba2);
+  border: 1px solid #fff;
+}
+.game-name{
+  width: 180rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: #fefefe;
+  height:40rpx;
+  font-weight: bold;
+  margin-top: 150rpx;
+}
+.game-img{
+  width: 550rpx;
+  height:280rpx;
+}
+.game-img .gameImgl{
+  width: 606rpx;
+  height:545rpx;
+}
+.select{
+  width: 690rpx;
+}
+.keyword{
+  width: 100%;
+  height: 600rpx;
+  margin-top: 80rpx;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.word{
+  position: relative;
+  width: 650rpx;
+  height: 86rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  line-height: 86rpx;
+  color: #333;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+  background-color: #f9f1ff;
+  box-shadow: 0rpx 7rpx 0rpx #9400ff;
+}
+.active{
+  color: #ac3cfc;
+  background-color: #ff74f7;
+}
+ .green{
+  color: #ac3cfc;
+  background-color: #c5e75f;
+  box-shadow: 0rpx 7rpx 0rpx #81a517;
+} 
+
+.model{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.g_model_content{
+  position: relative;
+  margin-top: 8%;
+  width: 502rpx;
+  height: 880rpx;
+}
+.g_model_pic{
+  width: 235rpx;
+  height: 245rpx;
+}
+.g_model_err{
+  position: absolute;
+  left: 38%;
+  top: 8%;
+  width: 119rpx;
+  height: 208rpx;
+}
+.g_model_info{
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  top: 25%;
+  left: 0;
+  width: 502rpx;
+  height: 670rpx;
+  border-radius: 15rpx;
+  background-color: #fff;
+}
+.g_model_errinfo{
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  top: 25%;
+  left: 0;
+  width: 502rpx;
+  height: 580rpx;
+  border-radius: 15rpx;
+  background-color: #fff;
+}
+.g_model_close{
+  width: 95%;
+  height: 60rpx;
+  font-size: 50rpx;
+  line-height: 60rpx;
+  text-align: right;
+  color: #6b15a9;
+}
+.g_model_title{
+  width: 100%;
+  height: 40rpx;
+  font-size: 36rpx;
+  line-height: 40rpx;
+  color: #6b15a9;
+}
+.g_model_music{
+  width: 190rpx;
+  height: 190rpx;
+  margin-top: 15rpx;
+  border-radius: 105rpx;
+  background-color: #bfbfbf;
+}
+.g_model_music image{
+  width: 100%;
+  height: 100%;
+  border-radius: 105rpx;
+}
+.g_model_goble{
+  width: 237rpx;
+  height: 175rpx;
+  margin-top: 15rpx;
+}
+.g_model_goble image{
+  width: 100%;
+  height: 100%;
+}
+.g_model_text{
+  width: 100%;
+  height: 100rpx;
+  margin-top: 15rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+.g_model_textTen{
+  width: 100%;
+  height: 60rpx;
+  margin-top: 15rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+.g_model_point{
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 134rpx;
+  font-size: 46rpx;
+  color: #e2a001;
+}
+.g_model_point image{
+  width: 138rpx;
+  height: 134rpx;
+}
+.g_model_btn{
+  width: 408rpx;
+  height: 82rpx;
+  border-radius: 45rpx;
+  line-height: 82rpx;
+  font-size: 28rpx;
+  background-color: #6b15a9;
+}
+.g_model_errbtn{
+  margin-bottom: 30rpx;
+  width: 408rpx;
+  height: 82rpx;
+  border-radius: 45rpx;
+  line-height: 82rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #6b15a9;
+}
+.g_model_next{
+  width: 100%;
+  height: 50rpx;
+  margin-top: 10rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  color: #6b15a9;
+}

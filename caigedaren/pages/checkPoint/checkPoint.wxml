@@ -1,0 +1,89 @@
+<view class="container">
+  
+  <view class='c_info'>
+    <image src='../../images/c_title.png' class='c_img'></image>
+    <view class='c_user'>
+      <open-data type='userAvatarUrl'></open-data>
+    </view>
+    <view class='c_name'><open-data type='userNickName'></open-data></view>
+
+    <view class='c_point'>第 <text>{{practice_num}}</text> 关</view>
+    
+    <view class='c_start' bindtap='start_game'>开始游戏</view>
+
+    <navigator class='c_btn' url="../myLike/myLike" open-type="navigate">
+      <image class='c_like' src='../../images/c_like.png'></image>
+      <view>我喜欢的歌</view>
+    </navigator>
+
+    <navigator  class='c_btn' url="../map/map" open-type="navigate">
+      <image class='c_map' src='../../images/c_map.png'></image>
+      <view>关卡地图</view>
+    </navigator >
+  
+  </view>
+
+  <view class='c_select'>
+    <view class="{{friend?'active':'default'}}" bindtap='select_friend'>好友排行</view>
+    <view class="{{world?'active':'default'}}" bindtap='select_world'>世界排行</view>
+  </view>
+
+  <view class='c_rank' wx:if="{{friend}}">
+    <view class='c_rank_list' wx:for="{{rank_friend}}" wx:key=''>
+        <image src='../../images/c_{{index}}.png' class='c_scord'   wx:if="{{index<4&&index>0}}"></image> 
+        <view class='c_listLeft' wx:if="{{index>=4}}">{{index}}</view>
+        <view class='c_img_border'>
+          <image src='{{item.avatarurl}}'></image>
+        </view>
+        <view class='c_rank_name'>
+          <view class='c_username'>{{item.nickname}}</view>
+          <view class='c_userPoint'>
+            <image src='../../images/c_point.png'></image>
+            <view>{{item.gold}}</view>
+          </view>
+        </view>
+        <view class='c_rank_con'>
+          <view class='c_conname'><text>{{item.practice_num}}</text> 首</view>
+        </view>
+    </view>
+  </view>
+
+  <view class='c_rank' wx:if="{{world}}">
+    <view class='c_rank_list' wx:for="{{rank_world}}" wx:key='index'>
+        <image src='../../images/c_{{index}}.png' class='c_scord'  wx:if="{{index<4&&index>0}}"></image> 
+        <view class='c_listLeft' wx:if="{{index>=4}}">{{index}}</view>
+        <view class='c_img_border'>
+          <image src='{{item.avatarurl}}'></image>
+        </view>
+        <view class='c_rank_name'>
+          <view class='c_username'>{{item.nickname}}</view>
+          <view class='c_userPoint'>
+            <image src='../../images/c_point.png'></image>
+            <view>{{item.gold}}</view>
+          </view>
+        </view>
+        <view class='c_rank_con'>
+          <view class='c_conname'><text>{{item.practice_num}}</text> 首</view>
+        </view>
+    </view>
+  </view>
+
+
+  <view class='c_myself'>
+        
+    <view class='c_myself_name'>
+      <view class='c_myself_user'>{{my_info.sort}}</view>
+      <view class='c_userPoint'>
+        <view>我的排名</view>
+      </view>
+    </view>
+    <view class='c_img_border'>
+      <image src='{{my_info.avatarurl}}'></image>
+    </view>
+    <view class='c_username'>{{my_info.nickname}}</view>
+    <view class='c_rank_con'>
+      <view class='c_conname'><text>{{my_info.practice_num}}</text> 首</view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,55 @@
+/* pages/map/map.wxss */
+page{
+  width: 100%;
+  background-color: #410070;
+}
+.container{
+  text-align: center;  
+}
+.m_title{
+  width: 100%;
+  height: 248rpx;
+  margin-top: 20rpx;
+}
+.m_title image{
+  width: 344rpx;
+  height: 100%;
+}
+.m_list{
+  position: relative;
+  width: 610rpx;
+  height: 158rpx;
+  margin-top: 40rpx;
+}
+.m_list image{
+  width: 610rpx;
+  height: 158rpx;
+}
+.m_list_txt{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 540rpx;
+  height: 158rpx;
+  padding-left: 70rpx;
+  font-size: 50rpx;
+  text-align: left;
+  line-height: 158rpx;
+}
+.m_list_not{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 540rpx;
+  height: 158rpx;
+  color: #6c6c6c;
+  padding-left: 70rpx;
+  font-size: 35rpx;
+  text-align: left;
+  line-height: 158rpx;
+}
+.m_icon{
+  width: 58rpx;
+  height: 161rpx;
+  margin-top: 50rpx;
+}

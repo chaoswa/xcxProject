@@ -1,0 +1,49 @@
+<view class='container'>
+  <view class='title'>
+    <image src='../../images/guidance/title.png'></image>
+  </view>
+  <view class='prize'>
+    <image src='https://mp3tiaozhandashi.chaosuduokai.com/images/prize.png'></image>
+  </view>
+  <!--如何参与  -->
+  <view class='show-bor'>
+    <view class='show-title'>如何参与?</view>
+    <view class='go-bor'>
+      <view class='num'>1</view>
+      <view class='cont'>进入挑战模式答对30道题就能得积 分兑换礼品。</view>
+      <view class='btn' bindtap='goClassify'>立刻挑战</view>
+    </view>
+    <view class='go-bor'>
+      <view class='num'>2</view>
+      <view class='cont'>转发微信群和微信好友免费得积分 兑换礼品。</view>
+      <button class='btn' open-type='share'>一键转发</button>
+    </view>
+  </view>
+  <!--奖品展示  -->
+  <view class='show-bor top'>
+    <view class='show-title'>奖品展示</view>
+    <view class='show-body'>
+      <view class='show-img' wx:for='{{prizes}}' wx:key=''>
+        <image src='https://xcx004.chaosuduokai.com/uploads/{{item.good_img}}'></image>
+        <view class='text'>{{item.good_name}}</view>
+      </view>
+    </view>
+  </view>
+  <!--兑换规则  -->
+  <view class='show-bor top'>
+    <view class='show-title'>兑换规则</view>
+    <view class='rule'>
+      <view class='rule-list' wx:for='{{prizes}}' wx:key=''>
+        <text>{{item.good_name}}</text>
+        <text>{{item.good_desc}}积分</text>
+      </view>
+    </view>
+  </view>
+  <!--bg  -->
+  <view class='bg'>
+    <image src='https://mp3tiaozhandashi.chaosuduokai.com/images/bg.png'></image>
+  </view>
+  <view class='bottom'>
+    <image src='../../images/g_gameBottom.png'></image>
+  </view>
+</view>

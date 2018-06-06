@@ -1,0 +1,23 @@
+<view class='container'>
+  <form class='body' bindsubmit="formSubmit">
+    <view class='inword'>
+      <label class='wordtxt'><text>收货人</text></label>
+      <input class='wordcontent' name="user" type='text' placeholder="请输入收货人姓名"/>
+    </view>
+    <view class='inword'>
+      <label class='wordtxt'><text>地址:</text></label>
+      <input class='wordcontent' name="adds" type='text' placeholder="请输入详细地址"/>
+    </view>
+    <view class='inword'>
+      <label class='wordtxt'><text>手机号码</text></label>
+      <input class='wordcontent' name="tel" type='number' placeholder="请输入手机号码"/>
+    </view>
+    <view class='inword'>
+      <label class='wordtxt'><text>微信号:</text></label>
+      <input class='wordcontent' name="bz" type='text' placeholder="请填写微信号"/>
+    </view>
+    
+    <button class="btn-area" form-type="submit" >确认信息</button>
+    
+  </form>
+</view>

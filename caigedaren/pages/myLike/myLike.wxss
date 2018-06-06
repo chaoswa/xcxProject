@@ -1,0 +1,127 @@
+/* pages/myLike/myLike.wxss */
+page{
+  width: 100%;
+  background-color: #410070;
+}
+.container{
+  text-align: center;  
+}
+.e_top{
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 690rpx;
+  height: 173rpx;
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+  background-color: #e040a7;
+}
+.e_title{
+  width: 100%;
+  height: 40rpx;
+  margin-top: 20rpx;
+  font-size: 34rpx;
+}
+.e_num{
+  width: 100%;
+  height: 40rpx;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+.e_num text{
+  color: #ffde00;
+  font-size: 36rpx;
+}
+.e_bar{
+  width: 650rpx;
+  height: 10rpx;
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+  background-color: #91015e;
+}
+.e_list{
+  position: absolute;
+  left: 0;
+  top:145rpx;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+.e_music{
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  width: 638rpx;
+  height: 108rpx;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+.e_music_left{
+  width: 330rpx;
+  height: 108rpx;
+  color: #333;
+  line-height: 108rpx;
+  padding-left: 20rpx;
+  text-align: left;
+  font-size: 30rpx;
+}
+.e_music_right{
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 290rpx;
+  height: 108rpx;
+}
+.e_music_share{
+  margin-top: 20rpx;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: transparent;
+}
+.e_music_share::after{
+  border: none;
+}
+.e_music_right image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.e_music_play{
+  position: absolute;
+  top: 15%;
+  right: -3%;
+  width: 80rpx;
+  height: 80rpx;
+}
+.e_music_play image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.e_text{
+  width: 100%;
+  height: 80rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  margin-top: 30%;
+}
+
+.e_start{
+  position: fixed;
+  bottom: 3%;
+  left: 30rpx;
+  width: 690rpx;
+  height: 96rpx;
+  font-size: 34rpx;
+  line-height: 96rpx;
+  border-radius: 50rpx;
+  background-color: #e040a7;
+}
+.e_pauseBtn{
+  position: absolute;
+  top: 0;
+  left: 0;
+}

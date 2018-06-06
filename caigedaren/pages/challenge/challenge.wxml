@@ -1,0 +1,105 @@
+<view class='container'>
+  <!-- 金幣與題目數 -->
+  <view class='head_box'>
+    <view class='money_box'>
+      <image src='../../images/index/gold_icon.png'></image>
+      <text>{{num_money}}</text>
+    </view>
+    <view class='text_box'>
+      <text>第<text>{{count+1}}</text>题</text>
+    </view>
+  </view>
+
+  <view class='stage'>
+    <!--灯光  -->
+    <image class='lamplight' src='../../images/challenge/stage.png'></image>
+    <!--卡通人物  -->
+    <image class='doll' src='../../images/challenge/doll.png'></image>
+    <!--麦克风  -->
+    <image class='microphone' src='../../images/challenge/microphone.png'></image>
+    <!--音符  -->
+    <image class='note' src='../../images/challenge/note.png'></image>
+  </view>
+
+  <!-- 倒計時 -->
+  <!-- <view class='bg'></view> -->
+  <view class='match-subject__cd'>
+    
+    <view class='media'>
+      <view class='progress-circle {{"p" + (circle_count_down_number)}} {{(circle_count_down_number >= 8) ? "over5" : ""}} {{circle_count_down ? "animation-progress" : ""}}'>
+        <view class="left-half-clipper">
+          <view class="first50-bar"></view>
+          <view class="value-bar"></view>
+        </view>
+        <view class="left-half-crow">
+        </view>
+      </view>
+      <view class='text'>
+        <view class='n' hidden='{{!circle_count_down}}'>{{circle_count_down_number}}</view>
+        <view class='n' hidden='{{circle_count_down}}'>0</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='cucoloris-bg'>
+    <!-- 答案选框 -->
+    <view class='answer_title'>{{musicInfo.type}}</view>
+    <view class='keyword'>
+      <view class="word {{dataSelect==index?'active':'default'}}" wx:for="{{musicInfo.options_title}}"  wx:key='index' bindtap='select_click' id='{{index}}' data-select='{{index}}'>{{item}}</view>
+    </view>
+    <image class='cucoloris' src='../../images/challenge/cucoloris.png'></image>
+  </view>
+  <view class='bottom-bg'><image src='../../images/index/bg_bottom.png'></image></view>
+</view>
+
+<!--挑战失败  -->
+<view class='mask' wx:if='{{isErr}}'>
+  <view class='defeated'>
+    <image class='defeated-img' src='../../images/challenge/game_over.png'></image>
+    <view class='defeated-border'>
+      <view class='defeated-title'>—— 不要灰心，再接再厉! ——</view>
+      <view class='defeated-word' wx:if='{{config.shareStatus}}'>转发到微信群可以继续游戏哦！</view>
+      <view class='goback' bindtap='change_sense'>继续游戏</view>
+      <view class='gohome' bindtap='goBackIndex'>返回主页</view>
+    </view>
+  </view>
+</view>
+<!--挑战成功  -->
+<view class='mask' wx:if='{{ok}}'>
+  <view class='success'>
+    <image class='success-img' src='../../images/challenge/success.png'></image>
+    <view class='defeated-border'>
+      <view class='defeated-title'>—— 本次获得 ——</view>
+      <view class='success-score'>{{config.clearance}}</view>
+      <!-- <view class='success-good'>最佳：
+        <text>980</text>
+      </view> -->
+       <view class='correct'>
+        <image src='../../images/challenge/icon.png'></image>
+        答对数
+        <text>30</text>
+      </view> 
+    </view>
+    <view class='continue' bindtap='goBackClassify'>继续游戏</view>
+    <view class='gohome duan' bindtap='goBackIndex'>返回主页</view>
+    <view class='conversion' bindtap='goBackStore'>兑换奖励</view>
+  </view>
+</view>
+<!--复活  -->
+<view class='mask' wx:if='{{resurgence}}'>
+  <view class='resurgence'>
+    <view class='close' bindtap='resurgenceClose'>×</view>
+    <view class='cry'>
+      <image src='../../images/challenge/cry.png'></image>
+    </view>
+    <view class='resurgence-title'>立即复活</view>
+    <view class='resurgence-cont'>分享到不同的微信群即可复活哦!</view>
+    <button class='btn-resurgence' open-type='share' bindtap='play_game_once'>立即复活</button>
+  </view>
+</view>
+<!--回答正确  -->
+<view class='mask' wx:if='{{isSucess}}'>
+  <view class='yes'>
+    <image src='../../images/challenge/yes.png'></image>
+  </view>
+</view>

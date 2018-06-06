@@ -1,0 +1,100 @@
+<!--pages/store/store.wxml-->
+<view class='container'>
+
+  <view class='s_select'>
+    <view class="{{prize?'active':'default'}}" bindtap='select_prize'>兑换奖品</view>
+    <view class="{{score?'active':'default'}}" bindtap='select_score'>获得积分</view>
+
+  </view>
+
+  <view wx:if="{{score}}" class='s_rank_wai'>
+    <view wx:if="{{rank_score.length!=0}}">
+      <view class='s_rank_top'>支付购买</view>
+      <view class='s_rank'>
+        <view class='s_rank_list' wx:for="{{rank_score}}" wx:key='index'>
+          <view class='s_rank_pic'>
+            <image src='../../images/s_score.png'></image>
+            <view class='s_rank_score'>{{item}}积分</view>
+          </view>
+          <view class='s_rank_txt'>￥{{index}}.00</view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class='s_rank_top'>音乐币兑换</view>
+
+    <view class='s_rank'>
+      <view class='s_rank_list' wx:for="{{rank_change}}" wx:key='index' id='{{index}}' bindtap='change_icon'>
+        <view class='s_rank_pic'>
+          <image src='../../images/s_score.png'></image>
+          <view class='s_rank_score'>{{index}}积分</view>
+        </view>
+        <view class='s_rank_get'>
+          <image src='../../images/s_music.png'></image>
+          <view>{{item}}</view>
+          <view>兑换</view>
+        </view>
+      </view>
+    </view>
+
+    <button class='s_rank_btn' open-type='share'>免费金币</button>
+    <view class='s_share_txt'>分享到微信群可获得30金币</view>
+
+
+
+  </view>
+
+
+  <view class='s_priz' wx:if="{{prize}}">
+    <view class='s_rank_prize' wx:for="{{rank_prize}}" wx:key='index' id='{{index}}' bindtap='change_gift'>
+      <view class='s_prize_pic'>
+        <image src='{{picUrl}}{{item.good_img}}'></image>
+        <view class='s_prize_score'>
+          <view>{{item.good_name}}</view>
+          <view></view>
+        </view>
+      </view>
+      <view class='s_prize_txt'>已有
+        <text>{{item.receive_time}}</text> 人获得</view>
+      <view class='s_icon'>
+        <image src='../../images/s_icon.png'></image>
+        <view>{{item.good_desc}}</view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 底部浪花图片 -->
+  <!-- <view class='g_gameBottom'>
+    <image src='../../images/g_gameBottom.png'></image>
+  </view>  -->
+
+</view>
+
+
+<!-- 积分不足时的弹窗 -->
+<view class='model' wx:if='{{not_have_icon}}'>
+  <view class='s_model_content'>
+    <view class='g_model_close' bindtap='model_close_click'>×</view>
+    <view class='s_model_title'>您的积分不足！</view>
+    <view class='g_model_msg'>可以用一下方式获得更多积分</view>
+    <view class='g_model_icon' wx:if='{{false}}'>
+      <view>500积分</view>
+      <view>￥4.00</view>
+    </view>
+    <view class='g_model_once' bindtap='toGame'>继续游戏获得更多积分</view>
+  </view>
+</view>
+
+
+<!-- 立即兑换时的弹窗 -->
+<view class='model' wx:if='{{get_gift}}'>
+  <view class='s_model_content'>
+    <view class='g_model_close' bindtap='model_close_click'>×</view>
+    <view class='s_model_title'>恭喜你成功兑换{{rank_current.good_name}}一个！</view>
+    <view class='g_model_msg'>请填写收货地址，</view>
+    <view class='g_model_msg'>奖品7个工作日内免费邮寄给你</view>
+    <view class='s_model_once' bindtap='address_click'>去填写</view>
+  </view>
+</view>
